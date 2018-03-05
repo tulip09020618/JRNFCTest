@@ -15,6 +15,7 @@
 		6597F9292047C31E00674356 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597F9282047C31E00674356 /* main.m */; };
 		6597F9332047C31F00674356 /* JRNFCTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597F9322047C31F00674356 /* JRNFCTestTests.m */; };
 		6597F93E2047C31F00674356 /* JRNFCTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6597F93D2047C31F00674356 /* JRNFCTestUITests.m */; };
+		6597F94E2047C76000674356 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6597F94D2047C76000674356 /* CoreNFC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		6597F9392047C31F00674356 /* JRNFCTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JRNFCTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6597F93D2047C31F00674356 /* JRNFCTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRNFCTestUITests.m; sourceTree = "<group>"; };
 		6597F93F2047C31F00674356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6597F94B2047C47E00674356 /* JRNFCTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JRNFCTest.entitlements; sourceTree = "<group>"; };
+		6597F94D2047C76000674356 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6597F94E2047C76000674356 /* CoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				6597F9312047C31F00674356 /* JRNFCTestTests */,
 				6597F93C2047C31F00674356 /* JRNFCTestUITests */,
 				6597F9172047C31E00674356 /* Products */,
+				6597F94C2047C76000674356 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 		6597F9182047C31E00674356 /* JRNFCTest */ = {
 			isa = PBXGroup;
 			children = (
+				6597F94B2047C47E00674356 /* JRNFCTest.entitlements */,
 				6597F9192047C31E00674356 /* AppDelegate.h */,
 				6597F91A2047C31E00674356 /* AppDelegate.m */,
 				6597F91C2047C31E00674356 /* ViewController.h */,
@@ -130,6 +136,14 @@
 				6597F93F2047C31F00674356 /* Info.plist */,
 			);
 			path = JRNFCTestUITests;
+			sourceTree = "<group>";
+		};
+		6597F94C2047C76000674356 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6597F94D2047C76000674356 /* CoreNFC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,11 @@
 					6597F9152047C31E00674356 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 					6597F92D2047C31F00674356 = {
 						CreatedOnToolsVersion = 9.2;
@@ -431,9 +450,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JRNFCTest/JRNFCTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K57F93BM5Q;
 				INFOPLIST_FILE = JRNFCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulip.JRNFCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,9 +466,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JRNFCTest/JRNFCTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K57F93BM5Q;
 				INFOPLIST_FILE = JRNFCTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tulip.JRNFCTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
